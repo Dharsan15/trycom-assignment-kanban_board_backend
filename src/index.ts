@@ -12,11 +12,12 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: "https://trycom-assignment-kanban-board-kvca-pi.vercel.app/", 
+    origin: "https://trycom-assignment-kanban-board-kvca-pi.vercel.app", 
     methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"], 
     allowedHeaders: ["Content-Type"],
     credentials: true
-  }));
+}));
+
 
   app.use((req, res, next) => {
 
@@ -24,6 +25,7 @@ app.use(cors({
     res.header("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE, OPTIONS");
     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
   
+
     next();
   });
 
